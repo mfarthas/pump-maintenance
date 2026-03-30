@@ -1,4 +1,4 @@
-# pump-health-ml
+# pump-maintenance
 
 Predictive maintenance pipeline for an industrial pump. Raw sensor data in, trained fault classifier out.
 
