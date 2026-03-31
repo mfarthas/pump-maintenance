@@ -1,5 +1,5 @@
 """
-Step 5 - Synthetic fault generation with KMeansSMOTE + ENN filtering.
+Synthetic fault generation with KMeansSMOTE + ENN filtering.
 
 Uses KMeansSMOTE to generate synthetic fault samples. KMeansSMOTE first
 clusters the full dataset so that the NORMAL class acts as a spatial boundary
@@ -12,7 +12,7 @@ i.e. samples that crossed the decision boundary during interpolation.
 
 This two-step approach (KMeansSMOTE → ENN) is equivalent to SMOTEENN but
 with explicit tracking so only the clean synthetic rows are saved to the
-fault bank, keeping the fault_bank.parquet interface compatible with step 6.
+fault bank.
 """
 
 from pathlib import Path

@@ -1,5 +1,5 @@
 """
-Step 4 - Anomaly detector baseline.
+Anomaly detector baseline.
 
 Trains an Isolation Forest on NORMAL-only windows from features.parquet,
 scores all windows, evaluates against true machine_status labels, saves

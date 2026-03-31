@@ -1,10 +1,3 @@
-"""
-Step 1 - Load and validate data.
-
-Loads data/sensor.csv, parses timestamps, reports shape/dtypes/NaNs,
-and saves a cleaned dataframe to data/sensor_clean.parquet.
-"""
-
 from pathlib import Path
 
 import pandas as pd

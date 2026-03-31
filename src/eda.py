@@ -1,8 +1,7 @@
 """
-Step 2 - Exploratory data analysis.
 
-Loads sensor_clean.parquet, plots 6 representative sensors with BROKEN windows
-highlighted, identifies near-zero variance sensors, and saves the figure.
+Exploratory data analysis.
+
 """
 
 from pathlib import Path

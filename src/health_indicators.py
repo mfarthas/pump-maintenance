@@ -1,5 +1,5 @@
 """
-Step 3 - Health indicator engineering.
+Health indicator engineering.
 
 Loads sensor_clean.parquet, drops near-zero variance sensors, computes rolling
 statistics (mean, std, rate-of-change) per sensor over a 60-cycle window,
@@ -20,7 +20,6 @@ OUT_HEATMAP = ROOT / "results" / "figures" / "correlation_heatmap.png"
 
 WINDOW = 60
 
-# Identified in step 2: sensor_15 is 100% NaN
 LOW_VARIANCE_SENSORS = [
     "sensor_15",
 ]

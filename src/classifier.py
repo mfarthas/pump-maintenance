@@ -1,5 +1,5 @@
 """
-Step 6 - Classifier with and without synthetic augmentation.
+Classifier with and without synthetic augmentation.
 
 Trains two Random Forest classifiers — Model A on real data only, Model B
 on real + synthetic faults — evaluates both on a time-based held-out test set,
@@ -9,6 +9,7 @@ saves metrics to results/metrics/classifier_comparison.json, and plots ROC curve
 import json
 from pathlib import Path
 
+import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -27,6 +28,7 @@ IN_FEATURES = ROOT / "data" / "features.parquet"
 IN_FAULT_BANK = ROOT / "data" / "fault_bank.parquet"
 OUT_METRICS = ROOT / "results" / "metrics" / "classifier_comparison.json"
 OUT_FIG = ROOT / "results" / "figures" / "roc_comparison.png"
+OUT_MODEL_B = ROOT / "data" / "model_b.pkl"
 
 TEST_FRACTION = 0.20
 RNG_SEED = 42
@@ -104,6 +106,9 @@ def main():
                                    class_weight="balanced")
     print("Training Model B ...")
     clf_B.fit(X_train_B, y_train_B)
+
+    joblib.dump(clf_B, OUT_MODEL_B)
+    print(f"Model B saved to {OUT_MODEL_B}")
 
     # Evaluate
     metrics_A, fpr_A, tpr_A = evaluate("Model A (real only)", clf_A, X_test, y_test)

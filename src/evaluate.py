@@ -1,11 +1,3 @@
-"""
-Step 7 - Final evaluation and summary.
-
-Loads all saved metrics, prints a clean comparison table, writes a plain-English
-interpretation of the results, and saves a consolidated summary to
-results/metrics/final_summary.json.
-"""
-
 import json
 from pathlib import Path
 
